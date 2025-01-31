@@ -16,7 +16,7 @@ productContainer.innerHTML = `
           <h2>${data.productdisplayname}</h2>
             <p><strong>Category:</strong> ${data.category}</p>
              <p><strong>Type:</strong> ${data.articletype}</p>
-          <p><strong>Price: </strong>${data.price},-</p>
+          <p><strong>Price: </strong>DKK ${data.price},-</p>
           <div><p class="addtocart">Add to cart</p></div>
         </div>
     `;
