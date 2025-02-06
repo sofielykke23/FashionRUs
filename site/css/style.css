@@ -1,29 +1,60 @@
 ul {
   list-style-type: none;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer {
+  text-align: center;
   background-color: beige;
+  padding: 1%;
+  margin: 0;
 }
 
 body {
   margin: 0%;
 }
 
+main {
+  margin: 0;
+}
 .read_more {
   text-decoration: underline;
 }
 
+.menu-linje {
+  background-color: beige;
+  width: 100%;
+  height: 40px;
+}
+
 .category_list_container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  row-gap: 10%;
-  gap: 7%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  margin: 0;
-  flex-wrap: wrap;
-  font-size: 90%;
+  display: none;
+  position: absolute;
+  z-index: 100;
+  background-color: beige;
+  padding-bottom: 4%;
+  text-align: left;
+  line-height: 180%;
+  width: 100%;
+}
+
+.burger-menu {
+  display: block;
+  cursor: pointer;
+  font-size: 190%;
+  position: absolute;
+  top: 10.5%;
+  right: 2%;
+  z-index: 101;
+  color: black;
+}
+
+.burger-toggle {
+  display: none;
+}
+
+.burger-toggle:checked + .category_list_container {
+  display: block;
 }
 
 a:link {
@@ -41,18 +72,28 @@ a {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.reverse-r {
+  display: inline-block;
+  transform: scaleX(-1);
+  color: rgb(138, 195, 245);
+}
+
 body {
   margin: 0%;
 }
 
-.foto {
+.video {
   width: 100%;
   padding: 0%;
+  height: auto;
+  object-fit: cover;
+  display: block;
 }
 
 .products-grid img {
   width: 100%;
   margin-top: 10%;
+  border-radius: 5px;
 }
 .products-grid {
   display: grid;
@@ -60,21 +101,26 @@ body {
   max-width: 1200px;
   margin-left: 5%;
   margin-right: 5%;
-  padding: 5%;
-
+  margin-top: 5%;
   margin-bottom: 5%;
-  gap: 3%;
 }
 
 .product_list_container {
+  position: relative;
   display: grid;
   grid-template-columns: subgrid;
-  grid-row: span 6;
+  background-color: rgb(244, 244, 244);
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 0%;
+  padding-bottom: 5%;
+  border-radius: 5px;
+  margin: 5%;
 }
 
 .product_list_container h2,
 .product_list_container p {
-  width: 100%; /* Gør teksten lige så bred som containeren */
+  width: fit-content; /* Gør teksten lige så bred som containeren */
   white-space: normal; /* Sørger for, at teksten kan brydes */
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 0%;
@@ -93,12 +139,13 @@ p {
 
 .product img {
   width: 100%;
+  border-radius: 5px;
 }
 
 .product {
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 5%;
+  margin-top: 2%;
   padding: 5%;
 }
 
@@ -115,48 +162,90 @@ p {
 
 .addtocart {
   background-color: beige;
-  width: 30%;
+  width: 100%;
   text-align: center;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding-top: 4%;
+  padding-bottom: 4%;
   margin-top: 6%;
+  border-radius: 5px;
 }
 
-.sold_out {
+.sold_out::after {
+  position: absolute;
+  top: 8%;
+  left: 0;
+  padding-top: 5%;
+  padding-bottom: 5%;
   background-color: aliceblue;
+  width: 100%;
   text-align: center;
-  padding-bottom: 2%;
+  content: "Sold out";
+}
+
+.billede_produkt {
+  position: relative;
+}
+.sold_out2::after {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: aliceblue;
+  width: 100%;
+  text-align: center;
+  content: "Sold out";
 }
 
 .strike_through {
   text-decoration: line-through;
 }
 
-.nedsat {
-  width: 20%;
-  background-color: bisque;
-  margin-top: 5%;
-  padding-bottom: 5%;
-  padding-left: 5%;
-  padding-right: 1%;
+.saleLabel {
+  visibility: hidden;
+  background-color: antiquewhite;
+  width: fit-content;
+  padding: 3%;
+  font-family: arial;
+  font-size: 80%;
+  border-radius: 5px;
 }
-@media (min-width: 1024px) {
+
+.isOnSale {
+  visibility: visible;
+}
+@media (min-width: 768px) {
   .category_list_container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 7%;
+    gap: 3%;
     padding-top: 1%;
     padding-bottom: 1%;
     margin: 0;
+
     font-size: 110%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .burger-menu {
+    display: none;
+  }
+
+  .burger-toggle {
+    display: none;
+  }
+
+  .menu-linje {
+    display: none;
+    z-index: 99;
   }
 
   ul {
     list-style-type: none;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: beige;
   }
 
   a:link {
@@ -174,37 +263,33 @@ p {
     font-family: Arial, Helvetica, sans-serif;
   }
 
-  .products-grid img {
-    width: 100%;
-    margin-top: 5%;
-  }
   .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-    margin-left: 5%;
-    margin-right: 5%;
-    padding: 5%;
-
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
     margin-bottom: 5%;
-    gap: 3%;
   }
 
   .product_list_container h2,
   .product_list_container p {
-    width: 100%; /* Gør teksten lige så bred som containeren */
+    width: fit-content; /* Gør teksten lige så bred som containeren */
     white-space: normal; /* Sørger for, at teksten kan brydes */
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 0%;
   }
 
   .product_list_container h2 {
-    font-size: 120%;
+    font-size: 110%;
     margin-top: 10%;
   }
 
   .product_list_container p {
     font-size: 100%;
+  }
+
+  .product_list_container {
+    margin: 5%;
   }
 
   .product img {
@@ -216,7 +301,7 @@ p {
     grid-template-columns: 1fr 1fr;
     margin-left: 5%;
     margin-right: 10%;
-    margin-top: 2%;
+    margin-top: 6%;
     padding: 5%;
   }
 
@@ -230,14 +315,34 @@ p {
 
   .addtocart {
     background-color: beige;
-    width: 30%;
+    width: 100%;
     text-align: center;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding-top: 3%;
+    padding-bottom: 3%;
     margin-top: 6%;
   }
 
   .product_text {
     margin-left: 5%;
+  }
+
+  .sold_out2::after {
+    position: absolute;
+    top: 7%;
+    left: 0;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: aliceblue;
+    width: 100%;
+    text-align: center;
+    content: "Sold out";
+  }
+
+  .saleLabel {
+    background-color: antiquewhite;
+    width: fit-content;
+    padding: 2.5%;
+    font-family: arial;
+    font-size: 100%;
   }
 }
