@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="./javascript/produkt.js" defer></script>
+    <script src="./javascript/index.js"></script>
     <title>FashionRUs</title>
   </head>
   <body>
     <header>
       <nav>
-        <a href="index.html"><h1 class="logo">FashionRUs</h1></a>
+        <label for="burger-toggle" class="burger-menu">&#9776;</label>
+        <a href="index.html"
+          ><h1 class="logo">Fashion<span class="reverse-r">R</span>Us</h1></a
+        >
+        <input type="checkbox" id="burger-toggle" class="burger-toggle" />
+
         <ul class="category_list_container">
           <li><a href="productlist.html">Accessories</a></li>
           <li><a href="productlist.html">Apparel</a></li>
@@ -19,18 +25,14 @@
           <li><a href="productlist.html">Personal Care</a></li>
           <li><a href="productlist.html">Sporting Goods</a></li>
         </ul>
+        <div class="menu-linje"></div>
       </nav>
     </header>
     <main>
-      <article class="product">
-        <!-- <div><img src="https://kea-alt-del.dk/t7/images/webp/640/1577.webp" alt="Beskrivelse af billede" /></div>
-        <div class="product_text">
-          <h2>Green cap</h2>
-
-          <p>DKK 295,-</p>
-          <div><p class="addtocart">Add to cart</p></div>
-        </div> -->
-      </article>
+      <article class="product"></article>
     </main>
+    <footer>
+      <div class="footer"><p>&#169; FashionRUs</p></div>
+    </footer>
   </body>
 </html>

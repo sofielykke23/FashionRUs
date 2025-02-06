@@ -4,12 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="./javascript/produktliste.js" defer></script>
+    <script src="./javascript/index.js"></script>
+
     <title>FashionRUs</title>
   </head>
   <body>
     <header>
       <nav>
-        <a href="index.html"><h1 class="logo">FashionRUs</h1></a>
+        <label for="burger-toggle" class="burger-menu">&#9776;</label>
+        <a href="index.html"
+          ><h1 class="logo">Fashion<span class="reverse-r">R</span>Us</h1></a
+        >
+        <input type="checkbox" id="burger-toggle" class="burger-toggle" />
+
         <ul class="category_list_container">
           <li><a href="productlist.html">Accessories</a></li>
           <li><a href="productlist.html">Apparel</a></li>
@@ -18,39 +26,14 @@
           <li><a href="productlist.html">Personal Care</a></li>
           <li><a href="productlist.html">Sporting Goods</a></li>
         </ul>
+        <div class="menu-linje"></div>
       </nav>
     </header>
     <main>
-      <section class="products-grid">
-        <article class="product_list_container">
-          <img src="https://kea-alt-del.dk/t7/images/webp/640/1572.webp" alt="Beskrivelse af billede" />
-          <h2>Black Sweatpants</h2>
-          <p>DKK 895,-</p>
-          <a href="product.html"><p class="read_more">Read more</p></a>
-        </article>
-        <article class="product_list_container">
-          <img src="https://kea-alt-del.dk/t7/images/webp/640/1577.webp" alt="Beskrivelse af billede" />
-          <h2>Green cap</h2>
-          <p>DKK 295,-</p>
-          <a href="product.html"><p class="read_more">Read more</p></a>
-        </article>
-        <article class="product_list_container">
-          <img src="https://kea-alt-del.dk/t7/images/webp/640/1525.webp" alt="Beskrivelse af billede" />
-
-          <h2>Black Puma Backpack</h2>
-          <p>DKK 595,-</p>
-          <a href="product.html"><p class="read_more">Read more</p></a>
-          <div class="sold_out"><p>Sold out</p></div>
-        </article>
-        <article class="product_list_container">
-          <img src="https://kea-alt-del.dk/t7/images/webp/640/1578.webp" alt="Beskrivelse af billede" />
-          <h2>Red Top</h2>
-          <p class="strike_through">DKK 395,-</p>
-          <p>DKK 198,-</p>
-          <div class="nedsat"><p>-50%</p></div>
-          <a href="product.html"><p class="read_more">Read more</p></a>
-        </article>
-      </section>
+      <section class="products-grid"></section>
     </main>
+    <footer>
+      <div class="footer"><p>&#169; FashionRUs</p></div>
+    </footer>
   </body>
 </html>
